@@ -1,2 +1,2 @@
 # URL_Shortner
-add-on
+URL Shartner + QR Code Generator
