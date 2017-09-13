@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
 
-  "name": "URL Shartner + QR Code generator",
+  "name": "URL Shartner + QR Code Generator",
   "description": "This extension is to shorten the URL of current tab and to develop the QR Code for short URL",
   "version": "0.1",
  
