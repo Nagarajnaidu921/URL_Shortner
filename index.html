@@ -2,24 +2,19 @@
 <html>
 <head>
 	<title>URL SHORTNER</title>
+	<base target="_blank" />
 	<script src="js/index.js"></script>
-	<style type="text/css">
-	div{
-		padding-bottom: 30px;
-	}
-		div pre {
-			text-align: center;
-		}
-
-		div button {
-			float: right;
-			display: none;
-			margin-left: -50%;
-		}
-
-	</style>
+	<script src="js/lib/qrcode.min.js"></script>
+	<link rel="stylesheet" href="css/sharer.css">
+<link rel="stylesheet" href="css/font-awesome.css">
 </head>
 <body>
-	<div><pre id="input"></pre><button id="copy">copy</button></div>
+	<div><pre id="link"></pre><button id="copy">copy</button></div>
+	<div id="qrcode"></div><hr>
+<div id="social-sharing-link-container-layout">
+	<a class="fa-facebook sharing-buttons" id="facebook" title="Share On Facebook"></a>
+	<a class="fa-twitter sharing-buttons" id="twitter" title="Share On Twitter"></a>
+	<a class="fa-google-plus sharing-buttons" id="google-plus" title="Share On Google Plus"></a>
+</div>
 </body>
 </html>

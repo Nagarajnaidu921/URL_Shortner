@@ -1,24 +1,28 @@
- document.addEventListener("DOMContentLoaded", function() {
+ document.addEventListener('DOMContentLoaded', function() {
  	function urlGen(url){
  		
  		var xhttp = new XMLHttpRequest();
  		xhttp.onreadystatechange = function() {
  			console.log(this);
  			if (this.readyState == 4 && this.status == 200) {
- 				document.getElementById("input").innerText = this.responseText;
- 				document.getElementById("copy").style.display = "block";
-
+ 				document.getElementById('link').innerText = this.responseText;
+ 				document.getElementById('copy').style.display = 'block';
+ 				document.getElementById('social-sharing-link-container-layout').style.display = 'block';
+ 				new QRCode(document.getElementById('qrcode'), this.responseText);
+ 				document.getElementById('facebook').href ='https://www.facebook.com/sharer.php?u='+this.responseText;
+ 				document.getElementById('twitter').href ='https://twitter.com/intent/tweet?url='+this.responseText;
+ 				document.getElementById('google-plus').href ='https://plus.google.com/share?url='+this.responseText;
  			}
  		};
- 		xhttp.open("GET", url, true);
+ 		xhttp.open('GET', url, true);
  		xhttp.send();
 
 
  		function copy(event) {
- 				var range = document.createRange();
- 				range.selectNode(document.getElementById('input'));
- 				window.getSelection().addRange(range);
- 				document.execCommand("Copy");
+ 			var range = document.createRange();
+ 			range.selectNode(document.getElementById('link'));
+ 			window.getSelection().addRange(range);
+ 			document.execCommand('Copy');
  		}
  		document.querySelector('#copy').addEventListener('click', copy);
 
