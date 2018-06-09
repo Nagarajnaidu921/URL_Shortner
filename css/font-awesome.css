@@ -45,3 +45,7 @@
 .fa-pinterest:before {
   content: "\f0d2";
 }
+
+.fa-copy:before {
+   content: "\f0c5";
+}

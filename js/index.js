@@ -5,6 +5,8 @@
          xhttp.onreadystatechange = function() {
              if (this.readyState == 4 && this.status == 200) {
                  document.getElementById('link').innerText = this.responseText;
+                 // document.getElementById('link').innerText = url;
+
                  document.getElementById('copy').style.display = 'block';
                  document.getElementById('social-sharing-link-container-layout').style.display = 'block';
                  new QRCode(document.getElementById('qrcode'), {
@@ -16,6 +18,9 @@
                  document.getElementById('facebook').href = 'https://www.facebook.com/sharer.php?u=' + this.responseText;
                  document.getElementById('twitter').href = 'https://twitter.com/intent/tweet?url=' + this.responseText;
                  document.getElementById('google-plus').href = 'https://plus.google.com/share?url=' + this.responseText;
+                 window.setTimeout( ()=>{
+                    document.getElementById('loader').style.display = 'none'
+                 }, 500);
              }
          };
          xhttp.open('GET', url, true);

@@ -1,4 +1,4 @@
-div{
+.pd30{
     padding-bottom: 30px;
 }
 
@@ -71,3 +71,54 @@ div{
 #google-plus:hover {
     background-color: salmon;
 }
+
+
+/*loader*/
+.loader-img {
+        width: 30px;
+        height: 30px;
+    }
+
+    .loader {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+         background: #fff;
+        z-index: 9999999999;
+    }
+
+    .spinner {
+        position: absolute;
+        width: 40px;
+        height: 40px;
+        top: 50%;
+        left: 50%;
+        margin-left: -20px;
+        margin-top: -40px;
+        -webkit-animation: rotatee 2.0s infinite linear;
+        animation: rotatee 2.0s infinite linear;
+    }
+    .spinner-text {
+        color: blue;
+        font-size: 10px;
+        position: absolute;
+        margin-top: 20px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    @-webkit-keyframes rotatee {
+        100% {
+            -webkit-transform: rotate(360deg)
+        }
+    }
+
+    @keyframes rotatee {
+        100% {
+            transform: rotate(360deg);
+            -webkit-transform: rotate(360deg);
+        }
+    }
