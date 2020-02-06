@@ -1,14 +1,17 @@
 document.addEventListener('DOMContentLoaded', function () {
     async function urlGen(url) {
-
+        const loader = document.getElementById('loader');
+        const link = document.getElementById('link');
+        const copyEle = document.getElementById('copy');
+        const socialSharingLinkContainer = document.getElementById('social-sharing-link-container-layout');
         try {
 
             const res = await fetch(url);
             const tinyUrl = await res.text();
-            document.getElementById('loader').style.display = 'none'
-            document.getElementById('link').innerText = tinyUrl;
-            document.getElementById('copy').style.display = 'block';
-            document.getElementById('social-sharing-link-container-layout').style.display = 'block';
+            loader.style.display = 'none'
+            link.innerText = tinyUrl;
+            copyEle.style.display = 'block';
+            socialSharingLinkContainer.style.display = 'block';
             new QRCode(document.getElementById('qrcode'), {
                 text: tinyUrl,
                 width: 250,
@@ -19,7 +22,7 @@ document.addEventListener('DOMContentLoaded', function () {
             document.getElementById('twitter').href = `https://twitter.com/intent/tweet?url=${tinyUrl}`;
             document.getElementById('linkedin').href = `https://www.linkedin.com/shareArticle?url=${tinyUrl}`;
             setTimeout(() => {
-                document.getElementById('loader').style.display = 'none'
+                loader.style.display = 'none'
             }, 500);
         } catch (error) {
 
@@ -27,11 +30,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
         function copy(event) {
             var range = document.createRange();
-            range.selectNode(document.getElementById('link'));
+            range.selectNode(link);
             window.getSelection().addRange(range);
             document.execCommand('Copy');
         }
-        document.querySelector('#copy').addEventListener('click', copy);
+        copyEle.addEventListener('click', copy);
 
     }
 
