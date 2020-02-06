@@ -61,14 +61,14 @@
     background-color: #2AAAE0;
 }
 
-#google-plus {
-    background-color: #D52323;
+#linkedin {
+    background-color:  #2867B2;
 }
 
 
 #facebook:hover,
 #twitter:hover,
-#google-plus:hover {
+#linkedin:hover {
     background-color: salmon;
 }
 
