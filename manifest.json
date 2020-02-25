@@ -19,7 +19,7 @@
   
   "permissions": [
     "clipboardWrite",
-    "http://tinyurl.com/",
+    "https://tinyurl.com/*",
   	"tabs",
     "activeTab"
   ]
